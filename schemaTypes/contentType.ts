@@ -1,7 +1,7 @@
 import { defineField, defineType } from "sanity";
 
 export const contentType = defineType({
-    name: 'content',
+    name: 'contentType',
     title: 'Content',
     type: 'document',
     fields: [
@@ -13,26 +13,11 @@ export const contentType = defineType({
         defineField({
             name: 'content',
             title: 'Content',
-            // type: 'blockContent', // Change 'text' to 'blockContent' for WYSIWYG editor
-            type: 'text', // Change 'text' to 'blockContent' for WYSIWYG editor
+            type: 'array',
+            of: [
+                { type: 'reference', to: { type: 'mediaItemType' } },
+                { type: 'block' },
+            ],
         }),
     ]
 })
-
-// export const blockContent = defineType({
-//     name: 'blockContent',
-//     title: 'Block Content',
-//     type: 'array',
-//     of: [
-//         {
-//             type: 'block',
-//             styles: [{ title: 'Normal', value: 'normal' }],
-//             lists: [],
-//             marks: {
-//                 decorators: [{ title: 'Strong', value: 'strong' }, { title: 'Emphasis', value: 'em' }],
-//                 annotations: [],
-//             },
-//         },
-//         // You can add other types like images or links here
-//     ],
-// })
