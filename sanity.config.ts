@@ -3,6 +3,7 @@ import {visionTool} from '@sanity/vision'
 import {structureTool} from 'sanity/structure'
 import {schemaTypes} from './schemaTypes'
 import {getStartedPlugin} from './plugins/sanity-plugin-tutorial'
+import { blockContent } from './schemaTypes/blockContent';
 
 const devOnlyPlugins = [getStartedPlugin()]
 
@@ -17,6 +18,7 @@ export default defineConfig({
 
   schema: {
     types: schemaTypes,
+    blockContent
   },
 })
 
