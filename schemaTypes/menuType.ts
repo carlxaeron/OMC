@@ -6,6 +6,12 @@ export const menuType = defineType({
     type: 'document',
     fields: [
         {
+            type: "string",
+            name: "title",
+            title: "Title",
+            initialValue: "",
+        },
+        {
             type: "reference",
             name: "Page",
             title: "Page",
