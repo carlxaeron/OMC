@@ -1,5 +1,9 @@
 import { defineType } from "sanity";
 
+const helpers = {
+    isHome: (document: { _id: string | string[]; }) => { return document?._id && document._id.indexOf('homePage') >= 0 ? true : false },
+}
+
 export const pageType = defineType({
     name: 'pageType',
     title: 'Pages',
@@ -14,6 +18,7 @@ export const pageType = defineType({
             name: 'slug',
             title: 'Slug',
             type: 'slug',
+            readOnly: ({document}) => { return document && helpers.isHome(document) || false },
             options: {
                 source: 'title',
                 maxLength: 96,

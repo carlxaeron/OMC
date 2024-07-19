@@ -17,6 +17,7 @@ export const contentType = defineType({
             of: [
                 { type: 'reference', to: { type: 'mediaItemType' } },
                 { type: 'block' },
+                { type: 'image' },
             ],
         }),
     ]
