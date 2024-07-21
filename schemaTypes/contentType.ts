@@ -7,6 +7,7 @@ const sectionIds = {
     contact: 'contactPage',
     verse: 'versePage',
     verseAuthors: 'verse-Page-authors',
+    others: 'othersPage',
 }
 
 const sectionIdOptions = Object.values(sectionIds);
@@ -25,10 +26,15 @@ export const contentType = defineType({
             name: 'sectionId',
             title: 'Section ID',
             type: 'string', // Corrected type
-            validation: Rule => Rule.required(),
+            // validation: Rule => Rule.required(),
             options: {
                 list: sectionIdOptions, // Correctly formatted options
             },
+        }),
+        defineField({
+            name: 'sectionIdCustom',
+            title: 'Section ID Custom',
+            type: 'string',
         }),
         defineField({
             name: 'content',
