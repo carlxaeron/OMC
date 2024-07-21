@@ -1,3 +1,4 @@
+import { cardType } from "./cardType";
 import { contentType } from "./contentType";
 import { mediaItemType } from "./mediaItemType";
 import { menuType } from "./menuType";
@@ -10,4 +11,5 @@ export const schemaTypes = [
     pageType,
     menuType,
     settingsType,
+    cardType,
 ]

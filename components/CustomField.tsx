@@ -1,7 +1,4 @@
 import * as icons from "@sanity/icons";
-
-type IconType = typeof icons;
-
 // ...
 import { Card, Stack, Text } from "@sanity/ui";
 import React from "react";
@@ -34,7 +31,7 @@ export function CustomInput(props: { [x: string]: any; renderDefault?: any }) {
   // eslint-disable-next-line react/prop-types
   const IconComponent = icons[props.value];
 
-  if(props.elementProps.id === 'icon') return (
+  if(props.elementProps.id === 'icon' && IconComponent) return (
     <Stack space={3}>
       {props.renderDefault(props)}
       <Text>
@@ -44,4 +41,12 @@ export function CustomInput(props: { [x: string]: any; renderDefault?: any }) {
   )
 
   else return props.renderDefault(restProps);
+}
+
+export function Preview(props) {
+  const {description, title, ...restProps} = props
+
+  console.log(props);
+
+  return props.renderDefault(restProps);
 }

@@ -1,6 +1,6 @@
 import { defineType } from "sanity";
 import * as icons from "@sanity/icons";
-import { CustomField, CustomInput } from "../components/CustomField";
+import { CustomField, CustomInput, Preview } from "../components/CustomField";
 
 const iconsList = Object.keys(icons).map(iconName => ({
     title: iconName,
@@ -34,6 +34,7 @@ export const menuType = defineType({
             components: {
                 field: CustomField,
                 input: CustomInput,
+                preview: Preview,
             },
             options: {
                 list: iconsList,

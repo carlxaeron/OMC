@@ -5,6 +5,8 @@ const sectionIds = {
     about: 'aboutPage',
     services: 'servicesPage',
     contact: 'contactPage',
+    verse: 'versePage',
+    verseAuthors: 'verse-Page-authors',
 }
 
 const sectionIdOptions = Object.values(sectionIds);
@@ -33,7 +35,10 @@ export const contentType = defineType({
             title: 'Content',
             type: 'array',
             of: [
-                { type: 'reference', to: { type: 'mediaItemType' } },
+                { type: 'reference', to: [
+                    { type: 'mediaItemType' },
+                    { type: 'cardType' },
+                ] },
                 { type: 'block' },
                 { type: 'image' },
             ],

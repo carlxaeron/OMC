@@ -4,12 +4,14 @@ export const defaultDocumentNodeResolver = (S) =>
     .items([
       S.listItem()
         .title('Pages')
+        .icon(() => '📄')
         .child(
           S.list()
             .title('Pages')
             .items([
               S.listItem()
                 .title('Home Page')
+                .icon(() => '🏠')
                 .child(
                   S.editor()
                     .title('Home Page')
@@ -27,6 +29,23 @@ export const defaultDocumentNodeResolver = (S) =>
                     .params({ type: 'pageType' }),
                 ),
             ]),
+        ),
+      S.listItem()
+        .title('Contents')
+        .icon(() => '📝')
+        .child(
+          S.list()
+            .title('Contents')
+            .items([
+              S.listItem()
+                .title('Page Contents')
+                .child(
+                  S.documentTypeList('contentType')
+                    .title('Page Contents')
+                    .filter('_type == $type')
+                    .params({ type: 'contentType' }),
+                ),
+              ])
         ),
       S.listItem()
         .title('Settings')
