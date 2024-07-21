@@ -54,11 +54,3 @@ export const defaultDocumentNodeResolver = (S) =>
             ]),
         )
     ]);
-
-
-  //   S.editor()
-  //   .schemaType('settingsType')
-  //   .documentId('siteSettings'), // Use the fixed ID here
-  // S.editor()
-  //   .schemaType('pageType')
-  //   .documentId('pageType'), // Use the fixed ID here
