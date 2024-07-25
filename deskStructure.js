@@ -65,10 +65,34 @@ export const defaultDocumentNodeResolver = (S) =>
               S.listItem()
                 .title('Menu')
                 .child(
-                  S.documentTypeList('menuType')
+                  S.list()
                     .title('Menu')
-                    .filter('_type == $type')
-                    .params({ type: 'menuType' }),
+                    .items([
+                      S.listItem()
+                        .title('Desktop Menu')
+                        .child(
+                          S.documentTypeList('menuType')
+                            .title('Desktop Menu')
+                            .filter('_type == $type')
+                            .params({ type: 'menuType' }),
+                        ),
+                      S.listItem()
+                        .title('Mobile Menu')
+                        .child(
+                          S.documentTypeList('mobileMenuType')
+                            .title('Mobile Menu')
+                            .filter('_type == $type')
+                            .params({ type: 'mobileMenuType' }),
+                        ),
+                    ])
+                ),
+              S.listItem()
+                .title('Configuration')
+                .child(
+                  S.editor()
+                  .title('Configuration')
+                  .schemaType('configType')
+                  .documentId('config'),
                 ),
             ]),
         )
